@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject questionMove;
+    public GameObject QuestionMove;
+
+    private Vector2 _zeroPosition = new Vector2(0, 0);
+
+    private void Start()
+    {
+        Time.timeScale = 1f; // Otherwise, the scene may be blocked
+    }
 
     void Update()
     {
@@ -13,13 +20,10 @@ public class LevelManager : MonoBehaviour
 
     void EventMoveQuestion()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        if ((moveX != 0 || moveY != 0) && Time.timeScale != 0f)
+        if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f)
         {
             Time.timeScale = 0f;
-            questionMove.SetActive(true);
+            QuestionMove.SetActive(true);
         }
     }
 }
