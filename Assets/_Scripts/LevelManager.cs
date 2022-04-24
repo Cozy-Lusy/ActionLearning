@@ -22,8 +22,8 @@ public class LevelManager : MonoBehaviour
     {
         if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f) //Do not forget to check that the game is not stopped
         {
-            Time.timeScale = 0f;
-            MoveQuestionPanel.SetActive(true);
+            //Time.timeScale = 0f;
+            //MoveQuestionPanel.SetActive(true);
         }
     }
 }
