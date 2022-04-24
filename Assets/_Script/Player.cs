@@ -5,7 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float MoveSpeed;
-    public Rigidbody2D Rb;
+    
+    private Rigidbody2D _rb;
+
+    private void Start()
+    {
+        _rb = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     private void FixedUpdate()
     {
@@ -14,6 +20,6 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        Rb.velocity = new Vector2(InputManager.MoveDerection.x * MoveSpeed, InputManager.MoveDerection.y * MoveSpeed);
+        _rb.velocity = new Vector2(InputManager.MoveDerection.x * MoveSpeed, InputManager.MoveDerection.y * MoveSpeed);
     }
 }
