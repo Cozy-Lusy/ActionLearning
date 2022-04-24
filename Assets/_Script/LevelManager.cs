@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject questionMove;
 
-    // Update is called once per frame
     void Update()
     {
         EventMoveQuestion();
@@ -21,9 +16,10 @@ public class LevelManager : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        if (moveX != 0 || moveY != 0)
+        if ((moveX != 0 || moveY != 0) && Time.timeScale != 0f)
         {
-            
+            Time.timeScale = 0f;
+            questionMove.SetActive(true);
         }
     }
 }
