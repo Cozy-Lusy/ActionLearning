@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject MoveQuestion;
+    public GameObject MoveQuestionPanel;
 
-    //private Vector2 _zeroPosition = new Vector2(0, 0);
+    private Vector2 _zeroPosition = new Vector2(0, 0);
 
     private void Start()
     {
@@ -20,10 +20,10 @@ public class LevelManager : MonoBehaviour
 
     private void EventMoveQuestion() // This thing brings up a question window if the player has moved.
     {
-        /*if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f) //Do not forget to check that the game is not stopped
+        if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f) //Do not forget to check that the game is not stopped
         {
-            Time.timeScale = 0f; 
-            QuestionMove.SetActive(true);
-        }*/
+            Time.timeScale = 0f;
+            MoveQuestionPanel.SetActive(true);
+        }
     }
 }
