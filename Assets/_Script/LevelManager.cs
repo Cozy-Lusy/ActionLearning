@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject QuestionMove;
+    public GameObject MoveQuestion;
 
-    private Vector2 _zeroPosition = new Vector2(0, 0);
+    //private Vector2 _zeroPosition = new Vector2(0, 0);
 
     private void Start()
     {
-        Time.timeScale = 1f; // Otherwise, the scene may be blocked
+        Time.timeScale = 1f; // Otherwise, the scene may be blocked :C
     }
 
-    void Update()
+    private void Update()
     {
         EventMoveQuestion();
     }
 
-    void EventMoveQuestion()
+    private void EventMoveQuestion() // This thing brings up a question window if the player has moved.
     {
-        if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f)
+        /*if ((InputManager.MoveDerection != _zeroPosition) && Time.timeScale != 0f) //Do not forget to check that the game is not stopped
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; 
             QuestionMove.SetActive(true);
-        }
+        }*/
     }
 }

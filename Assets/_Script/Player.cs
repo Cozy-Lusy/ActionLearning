@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed;
-    public Rigidbody2D rb;
+    public float MoveSpeed;
+    public Rigidbody2D Rb;
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move();
     }
 
-    void Move()
+    private void Move()
     {
-        rb.velocity = new Vector2(InputManager.MoveDerection.x * moveSpeed, InputManager.MoveDerection.y * moveSpeed);
+        Rb.velocity = new Vector2(InputManager.MoveDerection.x * MoveSpeed, InputManager.MoveDerection.y * MoveSpeed);
     }
 }
