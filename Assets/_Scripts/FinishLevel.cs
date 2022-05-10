@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour
 {
-    public int NextSceneIndex;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +16,6 @@ public class FinishLevel : MonoBehaviour
 
     private void CompleteLevel()
     {
-        SceneManager.LoadScene(NextSceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + Constants.INCREMENT_INDEX_LEVEL);
     }
 }

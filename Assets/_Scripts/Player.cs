@@ -20,6 +20,6 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        _rb.velocity = new Vector2(InputManager.MoveDerection.x * MoveSpeed, InputManager.MoveDerection.y * MoveSpeed);
+        _rb.velocity = new Vector2(InputManager.Instance.GetInput().x * MoveSpeed, InputManager.Instance.GetInput().y * MoveSpeed);
     }
 }

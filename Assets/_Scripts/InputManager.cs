@@ -1,29 +1,44 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public static Vector2 MoveDerection;
-    public static InputManager InputComponent;
+    private const string AXIS_X = "Horizontal";
+    private const string AXIS_Y = "Vertical";
 
-    private const string _axisX = "Horizontal";
-    private const string _axisY = "Vertical";
+    public static InputManager Instance { get; private set; }
 
-    private void Awake()
+    private Vector2 _moveDirection;
+
+    private void Start() 
     {
-        InputComponent = GetComponent<InputManager>();
+        if (Instance == null) //Вход из главного меню на первый уровень может породить новый InputManager
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        } 
     }
+
     private void Update()
     {
         ProcessInputs();
     }
 
-    public void ProcessInputs()
+    private void ProcessInputs()
     {
-        float moveX = Input.GetAxisRaw(_axisX);
-        float moveY = Input.GetAxisRaw(_axisY);
+        float moveX = Input.GetAxisRaw(AXIS_X);
+        float moveY = Input.GetAxisRaw(AXIS_Y);
 
-        MoveDerection = new Vector2(moveX, moveY).normalized;
+        _moveDirection = new Vector2(moveX, moveY).normalized;
     }
+
+    #region Input api
+
+    public Vector2 GetInput()
+    {
+        return _moveDirection;
+    }
+
+    #endregion
 }

@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void EventFirstQuestion() // This thing brings up a question window if the player has moved.
+    private void EventFirstQuestion() 
     {
         EnablePanel(FirstQuestionPanel);
     }

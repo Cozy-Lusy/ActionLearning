@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int IndexLevel1 = 1;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(IndexLevel1);
+        SceneManager.LoadScene(Constants.INCREMENT_INDEX_LEVEL);
     }
 
     public void QuitGame()

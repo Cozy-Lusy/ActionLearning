@@ -38,6 +38,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(Constants.MAIN_MENU_INDEX);
     }
 }
