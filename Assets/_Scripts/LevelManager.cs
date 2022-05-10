@@ -6,28 +6,25 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject FirstQuestionPanel;
-    public GameObject WelcomePanel;
-    public Question Questions;
+    [SerializeField] private GameObject firstQuestionPanel;
+    [SerializeField] private GameObject welcomePanel;
+    [SerializeField] private SettingsStorage questionsSO;
+    [SerializeField] private TextMeshProUGUI queryText;
+    [SerializeField] private List<TextMeshProUGUI> buttonText;
 
     private bool _gameIsPaused = false;
 
-    [SerializeField]
-    private TextMeshProUGUI queryText;
-    [SerializeField]
-    private List<TextMeshProUGUI> buttonText;
-
     private void Start()
     {
-        if (!WelcomePanel.activeSelf)
+        if (!welcomePanel.activeSelf)
         {
             if (_gameIsPaused)
             {
-                DisablePanel(WelcomePanel);
+                DisablePanel(welcomePanel);
             }
             else
             {
-                EnablePanel(WelcomePanel);
+                EnablePanel(welcomePanel);
             }
         }
 
@@ -45,28 +42,27 @@ public class LevelManager : MonoBehaviour
 
     private void EventFirstQuestion() 
     {
-        EnablePanel(FirstQuestionPanel);
+        EnablePanel(firstQuestionPanel);
     }
 
     private void SetQuestion()
     {
-
-        queryText.text = Questions.Query;
+        queryText.text = questionsSO.questions[0].Query;
 
         if (buttonText.Count >= 0)
         {
             for (int i = 0; i < 4; i++)
             {
-                buttonText[i].text = Questions.PossibleAnswer[i];
+                buttonText[i].text = questionsSO.questions[0].PossibleAnswer[i];
             }
         }
     }
 
     public void SelectAnswer(int answer)
     {
-        if (Questions.CorrectAnswer == answer)
+        if (questionsSO.questions[0].CorrectAnswer == answer)
         {
-            DisablePanel(FirstQuestionPanel);
+            DisablePanel(firstQuestionPanel);
             Debug.Log("Correct");
         } else
         {

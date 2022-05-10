@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private const string AXIS_X = "Horizontal";
-    private const string AXIS_Y = "Vertical";
-
     public static InputManager Instance { get; private set; }
 
     private Vector2 _moveDirection;
@@ -27,8 +24,8 @@ public class InputManager : MonoBehaviour
 
     private void ProcessInputs()
     {
-        float moveX = Input.GetAxisRaw(AXIS_X);
-        float moveY = Input.GetAxisRaw(AXIS_Y);
+        float moveX = Input.GetAxisRaw(Constants.AXIS_X);
+        float moveY = Input.GetAxisRaw(Constants.AXIS_Y);
 
         _moveDirection = new Vector2(moveX, moveY).normalized;
     }
