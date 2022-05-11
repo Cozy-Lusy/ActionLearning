@@ -5,5 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Settings", menuName = "Data/Settings", order = 1)]
 public class SettingsStorage : ScriptableObject
 {
-    public List<Question> questions;
+    public static SettingsStorage InstanceSettings { get; }
+
+    [SerializeField] private List<Question> questions;
+
+    public List<Question> GetQuestions()
+    {
+        return questions;
+    }
 }
