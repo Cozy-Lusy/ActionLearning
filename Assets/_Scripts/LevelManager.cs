@@ -47,22 +47,24 @@ public class LevelManager : MonoBehaviour
 
     private void SetQuestion()
     {
-        
+        var questions = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1];
 
-        queryText.text = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetQuery();
+        queryText.text = questions.GetQuery();
 
         if (buttonText.Count >= 0)
         {
             for (int i = 0; i < 4; i++)
             {
-                buttonText[i].text = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetPossibleAnswer()[i];
+                buttonText[i].text = questions.GetPossibleAnswer()[i];
             }
         }
     }
 
     public void SelectAnswer(int answer)
     {
-        if (SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer() == answer)
+        var possibleAnswer = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer();
+
+        if (possibleAnswer == answer)
         {
             DisablePanel(firstQuestionPanel);
             Debug.Log("Correct");
