@@ -10,9 +10,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject welcomePanel;
     [SerializeField] private TextMeshProUGUI queryText;
     [SerializeField] private List<TextMeshProUGUI> buttonText;
+    [SerializeField] private SettingsStorage SettingsStorageSO;
 
     private bool _gameIsPaused = false;
-    private Question question = SettingsStorage.InstanceSettings.GetQuestions()[Constants.LEVEL1_QUESTION1];
 
     private void Start()
     {
@@ -47,20 +47,22 @@ public class LevelManager : MonoBehaviour
 
     private void SetQuestion()
     {
-        queryText.text = question.GetQuery();
+        
+
+        queryText.text = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetQuery();
 
         if (buttonText.Count >= 0)
         {
             for (int i = 0; i < 4; i++)
             {
-                buttonText[i].text = question.GetPossibleAnswer()[i];
+                buttonText[i].text = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetPossibleAnswer()[i];
             }
         }
     }
 
     public void SelectAnswer(int answer)
     {
-        if (question.GetCorrectAnswer() == answer)
+        if (SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer() == answer)
         {
             DisablePanel(firstQuestionPanel);
             Debug.Log("Correct");

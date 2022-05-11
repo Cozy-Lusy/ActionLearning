@@ -20,3 +20,24 @@ MonoBehaviour:
     - 3
     - 4
     CorrectAnswer: 2
+  - Query: "\u0412\u043E\u043F\u0440\u043E\u0441"
+    PossibleAnswer:
+    - 1
+    - 2
+    - 3
+    - 4
+    CorrectAnswer: 2
+  - Query: "\u0412\u043E\u043F\u0440\u043E\u0441"
+    PossibleAnswer:
+    - 1
+    - 2
+    - 3
+    - 4
+    CorrectAnswer: 2
+  - Query: "\u0412\u043E\u043F\u0440\u043E\u0441"
+    PossibleAnswer:
+    - 1
+    - 2
+    - 3
+    - 4
+    CorrectAnswer: 2

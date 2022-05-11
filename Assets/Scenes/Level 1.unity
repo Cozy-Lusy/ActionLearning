@@ -220,9 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9191b40043519264882aef417cc9cc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstQuestionPanel: {fileID: 2081863417}
-  WelcomePanel: {fileID: 1161650846}
-  QuestionsSO: {fileID: 11400000, guid: 55cd62b67cfaf104691107a3e9b4b094, type: 2}
+  firstQuestionPanel: {fileID: 2081863417}
+  welcomePanel: {fileID: 1161650846}
   queryText: {fileID: 273108787}
   buttonText:
   - {fileID: 908872572}
