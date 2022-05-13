@@ -7,10 +7,11 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance { get; private set; }
 
     private Vector2 _moveDirection;
+    private bool _escIsClicked;
 
     private void Start() 
     {
-        if (Instance == null) //Вход из главного меню на первый уровень может породить новый InputManager
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
@@ -28,6 +29,8 @@ public class InputManager : MonoBehaviour
         float moveY = Input.GetAxisRaw(Constants.AXIS_Y);
 
         _moveDirection = new Vector2(moveX, moveY).normalized;
+
+        _escIsClicked = Input.GetKeyDown(KeyCode.Escape);
     }
 
     #region Input api
@@ -35,6 +38,11 @@ public class InputManager : MonoBehaviour
     public Vector2 GetInput()
     {
         return _moveDirection;
+    }
+
+    public bool GetInputEsc()
+    {
+        return _escIsClicked;
     }
 
     #endregion

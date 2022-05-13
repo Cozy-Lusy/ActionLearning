@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    public int MainMenuIndex = 0;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Player>() != null)
@@ -17,6 +15,6 @@ public class EndGame : MonoBehaviour
 
     private void CompleteLevel()
     {
-        SceneManager.LoadScene(MainMenuIndex);
+        SceneManager.LoadScene(Constants.MAIN_MENU_INDEX);
     }
 }

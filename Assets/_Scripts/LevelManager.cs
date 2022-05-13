@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using UnityEngine;
-using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private GameObject firstQuestionPanel;
     [SerializeField] private GameObject welcomePanel;
-    [SerializeField] private TextMeshProUGUI queryText;
-    [SerializeField] private List<TextMeshProUGUI> buttonText;
-    [SerializeField] private SettingsStorage SettingsStorageSO;
 
-    private bool _gameIsPaused = false;
+    [SerializeField] private Button buttonOK;
+
+    [SerializeField] private FinishLevel finishLevelTrigger;
+
+    private static bool _gameIsPaused = false;
 
     private void Start()
     {
@@ -27,61 +29,35 @@ public class LevelManager : MonoBehaviour
                 EnablePanel(welcomePanel);
             }
         }
-
-        SetQuestion();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnEnable()
     {
-        if (collision.gameObject.GetComponent<Player>() != null)
-        {
-            EventFirstQuestion();
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
+        finishLevelTrigger.OnLevelEnded += CompleteLevel;
+
+        buttonOK.onClick.AddListener(() => DisablePanel(welcomePanel));
     }
 
-    private void EventFirstQuestion() 
+    private void OnDisable()
     {
-        EnablePanel(firstQuestionPanel);
+        finishLevelTrigger.OnLevelEnded -= CompleteLevel;
+
+        buttonOK.onClick.RemoveAllListeners();
     }
 
-    private void SetQuestion()
+    private void CompleteLevel()
     {
-        var questions = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1];
-
-        queryText.text = questions.GetQuery();
-
-        if (buttonText.Count >= 0)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                buttonText[i].text = questions.GetPossibleAnswer()[i];
-            }
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + Constants.INCREMENT_INDEX_LEVEL);
     }
 
-    public void SelectAnswer(int answer)
-    {
-        var possibleAnswer = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer();
-
-        if (possibleAnswer == answer)
-        {
-            DisablePanel(firstQuestionPanel);
-            Debug.Log("Correct");
-        } else
-        {
-            Debug.Log("Wrong");
-        }
-    }
-
-    public void EnablePanel(GameObject panel)
+    public static void EnablePanel(GameObject panel)
     {
         panel.SetActive(true);
         Time.timeScale = 0f;
         _gameIsPaused = true;
     }
 
-    public void DisablePanel(GameObject panel)
+    public static void DisablePanel(GameObject panel)
     {
         panel.SetActive(false);
         Time.timeScale = 1f;

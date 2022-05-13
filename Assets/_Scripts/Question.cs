@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class Question
 {
-    public static Question InstanceQuestions { get; }
+    public static InputManager InstanceQuestions { get; }
 
     [SerializeField] private string Query;
     [SerializeField] private string[] PossibleAnswer;
