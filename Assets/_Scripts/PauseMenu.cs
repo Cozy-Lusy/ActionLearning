@@ -17,11 +17,9 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPaused)
             {
-                Time.timeScale = 1f;
                 Resume();
             } else
             {
-                Time.timeScale = 0f;
                 Pause();
             }
         }
