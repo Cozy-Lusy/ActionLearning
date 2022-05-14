@@ -473,7 +473,7 @@ MonoBehaviour:
   - {fileID: 1656513945}
   - {fileID: 2049457197}
   - {fileID: 186493660}
-  SettingsStorageSO: {fileID: 11400000, guid: 55cd62b67cfaf104691107a3e9b4b094, type: 2}
+  settingsStorageSO: {fileID: 11400000, guid: 55cd62b67cfaf104691107a3e9b4b094, type: 2}
   buttonA: {fileID: 943221798}
   buttonB: {fileID: 943221797}
   buttonC: {fileID: 943221796}

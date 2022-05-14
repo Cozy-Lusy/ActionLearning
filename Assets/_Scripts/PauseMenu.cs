@@ -9,13 +9,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private Button buttonContinue;
 
-    private bool GameIsPaused = false;
+    private bool _gameIsPaused = false;
 
     private void Update()
     {
         if (InputManager.Instance.GetInputEsc())
         {
-            if (GameIsPaused)
+            if (_gameIsPaused)
             {
                 Resume();
             } else
@@ -39,14 +39,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        _gameIsPaused = false;
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        _gameIsPaused = true;
     }
 
     public void LoadMainMenu()

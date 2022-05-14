@@ -9,9 +9,7 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject welcomePanel;
-
     [SerializeField] private Button buttonOK;
-
     [SerializeField] private FinishLevel finishLevelTrigger;
 
     private static bool _gameIsPaused = false;

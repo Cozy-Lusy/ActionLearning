@@ -7,9 +7,9 @@ public class SettingsStorage : ScriptableObject
 {
     public static SettingsStorage InstanceSettings { get; }
 
-    [SerializeField] private List<Question> questions;
+    [SerializeField] private List<QuestionData> questions;
 
-    public List<Question> GetQuestions()
+    public List<QuestionData> GetQuestions()
     {
         return questions;
     }

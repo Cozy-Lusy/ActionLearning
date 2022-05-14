@@ -9,7 +9,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private GameObject firstQuestionPanel;
     [SerializeField] private TextMeshProUGUI queryText;
     [SerializeField] private List<TextMeshProUGUI> buttonText;
-    [SerializeField] private SettingsStorage SettingsStorageSO;
+    [SerializeField] private SettingsStorage settingsStorageSO;
 
     [SerializeField] private Button buttonA;
     [SerializeField] private Button buttonB;
@@ -53,7 +53,7 @@ public class QuestionManager : MonoBehaviour
 
     private void SetQuestion()
     {
-        var questions = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1];
+        var questions = settingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1];
 
         queryText.text = questions.GetQuery();
 
@@ -68,7 +68,7 @@ public class QuestionManager : MonoBehaviour
 
     public void SelectAnswer(int answer)
     {
-        var possibleAnswer = SettingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer();
+        var possibleAnswer = settingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer();
 
         if (possibleAnswer == answer)
         {
