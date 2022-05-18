@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
+    [SerializeField] private int levelIndex = -1;
+
     [SerializeField] private GameObject firstQuestionPanel;
     [SerializeField] private TextMeshProUGUI queryText;
     [SerializeField] private List<TextMeshProUGUI> buttonText;
@@ -16,8 +18,22 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private Button buttonC;
     [SerializeField] private Button buttonD;
 
+    private List<QuestionData> _questionsForLevel = new List<QuestionData>();
+    private int _curentQuestionIndex = 0;
+
     private void Start()
     {
+        settingsStorageSO.Init();
+
+        if (levelIndex < 0)
+        {
+            Debug.LogError("Не указан индекс уровня");
+        }
+        else
+        {
+            _questionsForLevel = settingsStorageSO.GetQuestions(1);
+        }
+
         SetQuestion();
     }
 
@@ -51,26 +67,45 @@ public class QuestionManager : MonoBehaviour
         LevelManager.EnablePanel(firstQuestionPanel);
     }
 
+    private QuestionData GetQuestion(int questionIndex)
+    {
+        if (questionIndex >= 0 && _questionsForLevel.Count < questionIndex)
+        {
+            Debug.LogError("Нет вопросов");
+
+            return QuestionData.GetEmptyQuestion();
+        }
+
+        return _questionsForLevel[questionIndex];
+    }
+
     private void SetQuestion()
     {
-        var questions = settingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1];
+        var question = GetQuestion(_curentQuestionIndex);
 
-        queryText.text = questions.GetQuery();
+        if (question is null)
+        {
+            Debug.Log("Вопросы отсутствуют");
+
+            return;
+        }
+
+        queryText.text = question.Query;
 
         if (buttonText.Count >= 0)
         {
             for (int i = 0; i < 4; i++)
             {
-                buttonText[i].text = questions.GetPossibleAnswer()[i];
+                buttonText[i].text = question.PossibleAnswer[i];
             }
         }
     }
 
     public void SelectAnswer(int answer)
     {
-        var possibleAnswer = settingsStorageSO.GetQuestions()[Constants.LEVEL1_QUESTION1].GetCorrectAnswer();
+        var correctAnswer = GetQuestion(_curentQuestionIndex).CorrectAnswer;
 
-        if (possibleAnswer == answer)
+        if (correctAnswer == answer)
         {
             LevelManager.DisablePanel(firstQuestionPanel);
             Debug.Log("Correct");

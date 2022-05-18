@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc43be727faf55d4fa0cd8a78dfedbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
   firstQuestionPanel: {fileID: 943221800}
   queryText: {fileID: 943221799}
   buttonText:
@@ -633,6 +634,26 @@ PrefabInstance:
     - target: {fileID: 499924781353372782, guid: 3d08874aa9d5d414588681e5174ba854,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420952615171258333, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420952615514081744, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420952615879891388, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420952616143502027, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17426abb416231246b7c6471848dc80c, type: 3}
   m_Name: Level1_questions
   m_EditorClassIdentifier: 
-  questions:
+  questionsForLevel1:
   - query: "\u042F \u043A\u043B\u0430\u0441\u0441\u043D\u044B\u0439"
     possibleAnswer:
     - "\u0414\u0430"
     - "\u041D\u0435\u0442"
     - "\u041D\u0430\u0432\u0435\u0440\u043D\u043E"
-    - "\u041A\u0435\u043A"
+    - "\u041B\u043E\u043B"
     correctAnswer: 1

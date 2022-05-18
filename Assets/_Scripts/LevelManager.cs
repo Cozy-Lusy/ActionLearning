@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
         if (!welcomePanel.activeSelf)
         {
             if (_gameIsPaused)
@@ -51,8 +53,7 @@ public class LevelManager : MonoBehaviour
     public static void EnablePanel(GameObject panel)
     {
         panel.SetActive(true);
-        GameObject.FindObjectOfType<Player>().MoveSpeed = 0;
-
+        FindObjectOfType<Player>().MoveSpeed = 0;
         _gameIsPaused = true;
     }
 

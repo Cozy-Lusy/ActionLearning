@@ -5,24 +5,19 @@ using UnityEngine;
 [Serializable]
 public class QuestionData
 {
-    public static InputManager InstanceQuestions { get; }
+    public string Query => query;
+    public List<string> PossibleAnswer => possibleAnswer;
+    public int CorrectAnswer => correctAnswer;
 
     [SerializeField] private string query;
     [SerializeField] private List<string> possibleAnswer;
     [SerializeField] private int correctAnswer;
 
-    public string GetQuery()
+    public static QuestionData GetEmptyQuestion()
     {
-        return query;
-    }
-
-    public List<string> GetPossibleAnswer()
-    {
-        return possibleAnswer;
-    }
-
-    public int GetCorrectAnswer()
-    {
-        return correctAnswer;
+        return new QuestionData
+        {
+            query = "Пустой вопрос нет данных"
+        };
     }
 }
