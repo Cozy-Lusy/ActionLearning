@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,12 +10,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private FinishLevel finishLevelTrigger;
 
     private static bool _gameIsPaused = false;
+    private int _levelIndex;
 
     private void Start()
     {
         Time.timeScale = 1f;
 
-        if (!welcomePanel.activeSelf)
+        _levelIndex = SceneManager.GetActiveScene().buildIndex;
+        Save();
+
+        if (welcomePanel != null && !welcomePanel.activeSelf)
         {
             if (_gameIsPaused)
             {
@@ -33,21 +34,31 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        finishLevelTrigger.OnLevelEnded += CompleteLevel;
-
-        buttonOK.onClick.AddListener(() => DisablePanel(welcomePanel));
+        if (finishLevelTrigger != null)
+        {
+            finishLevelTrigger.OnLevelEnded += CompleteLevel;
+        }
+        if (buttonOK != null)
+        {
+            buttonOK.onClick.AddListener(() => DisablePanel(welcomePanel));
+        }
     }
 
     private void OnDisable()
     {
-        finishLevelTrigger.OnLevelEnded -= CompleteLevel;
-
-        buttonOK.onClick.RemoveAllListeners();
+        if (finishLevelTrigger != null)
+        {
+            finishLevelTrigger.OnLevelEnded -= CompleteLevel;
+        }
+        if (buttonOK != null)
+        {
+            buttonOK.onClick.RemoveAllListeners();
+        } 
     }
 
     private void CompleteLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + Constants.INCREMENT_INDEX_LEVEL);
+        SceneManager.LoadScene(_levelIndex + Constants.INCREMENT_INDEX_LEVEL);
     }
 
     public static void EnablePanel(GameObject panel)
@@ -62,5 +73,21 @@ public class LevelManager : MonoBehaviour
         panel.SetActive(false);
         FindObjectOfType<Player>().MoveSpeed = 10;
         _gameIsPaused = false;
+    }
+
+    public void Save()
+    {
+        SaveManager.Save(Constants.SAVE_KEY, GetSaveSnapshot());
+    }
+
+    private SaveData GetSaveSnapshot()
+    {
+        var data = new SaveData()
+        {
+            SceneIndex = _levelIndex,
+
+        };
+
+        return data;
     }
 }

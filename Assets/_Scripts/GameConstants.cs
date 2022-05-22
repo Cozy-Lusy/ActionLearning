@@ -10,4 +10,6 @@ public static class Constants
     public const int LEVEL1_QUESTION1 = 0;
     public const int LEVEL2_QUESTION1 = 1;
     public const int LEVEL3_QUESTION1 = 2;
+
+    public const string SAVE_KEY = "mainKey";
 }
