@@ -575,7 +575,6 @@ MonoBehaviour:
   welcomePanel: {fileID: 0}
   buttonOK: {fileID: 0}
   finishLevelTrigger: {fileID: 203995817}
-  buttonLoad: {fileID: 0}
 --- !u!4 &869836269
 Transform:
   m_ObjectHideFlags: 0
@@ -744,6 +743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690521936178522691, guid: 9bee11095093e814f9edf2d2963cc7e3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3188787651187834788, guid: 9bee11095093e814f9edf2d2963cc7e3,
         type: 3}
       propertyPath: m_Name
