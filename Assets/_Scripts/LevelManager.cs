@@ -2,15 +2,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject welcomePanel;
     [SerializeField] private Button buttonOK;
     [SerializeField] private FinishLevel finishLevelTrigger;
+    [SerializeField] private TextMeshProUGUI livesText;
 
     private static bool _gameIsPaused = false;
     private int _levelIndex;
+    
+    public static int LivesCount = 3;
 
     private void Start()
     {
@@ -30,6 +34,11 @@ public class LevelManager : MonoBehaviour
                 EnablePanel(welcomePanel);
             }
         }
+    }
+
+    private void Update()
+    {
+        livesText.text = $"{LivesCount}";
     }
 
     private void OnEnable()
@@ -85,7 +94,7 @@ public class LevelManager : MonoBehaviour
         var data = new SaveData()
         {
             SceneIndex = _levelIndex,
-
+            Lives = LivesCount
         };
 
         return data;

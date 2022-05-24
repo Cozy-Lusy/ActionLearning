@@ -223,6 +223,7 @@ MonoBehaviour:
   welcomePanel: {fileID: 943221795}
   buttonOK: {fileID: 943221794}
   finishLevelTrigger: {fileID: 443594023}
+  livesText: {fileID: 697021835}
 --- !u!4 &92028753
 Transform:
   m_ObjectHideFlags: 0
@@ -466,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc43be727faf55d4fa0cd8a78dfedbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 0
+  levelIndex: 1
   firstQuestionPanel: {fileID: 943221800}
   queryText: {fileID: 943221799}
   buttonText:
@@ -519,6 +520,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 11}
   m_EdgeRadius: 0
+--- !u!114 &697021835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6108094935655960095, guid: 3d08874aa9d5d414588681e5174ba854,
+    type: 3}
+  m_PrefabInstance: {fileID: 943221792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &943221792
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,10 +31,12 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
-            _questionsForLevel = settingsStorageSO.GetQuestions(1);
+            _questionsForLevel = settingsStorageSO.GetQuestions(levelIndex);
         }
 
         SetQuestion();
+
+        Load();
     }
 
     private void OnEnable()
@@ -108,11 +110,24 @@ public class QuestionManager : MonoBehaviour
         if (correctAnswer == answer)
         {
             LevelManager.DisablePanel(firstQuestionPanel);
+
             Debug.Log("Correct");
+
+            settingsStorageSO.ClearStorage();
+            _curentQuestionIndex++;
         }
         else
         {
+            LevelManager.LivesCount--;
+            
             Debug.Log("Wrong");
         }
+    }
+
+    public void Load()
+    {
+        var data = SaveManager.Load<SaveData>(Constants.SAVE_KEY);
+
+        LevelManager.LivesCount = data.Lives;
     }
 }

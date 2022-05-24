@@ -10,9 +10,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button buttonNewGame;
     [SerializeField] private Button buttonQuit;
 
-    private const string saveKey = "mainKey";
-
-
     private void OnEnable()
     {
         buttonLoad.onClick.AddListener(LoadGame);
@@ -29,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        var data = SaveManager.Load<SaveData>(saveKey);
+        var data = SaveManager.Load<SaveData>(Constants.SAVE_KEY);
 
         SceneManager.LoadScene(data.SceneIndex);
     }
@@ -37,6 +34,8 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene(Constants.INCREMENT_INDEX_LEVEL);
+
+        LevelManager.LivesCount = 3;
     }
 
     public void QuitGame()
