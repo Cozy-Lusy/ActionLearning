@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   welcomePanel: {fileID: 943221795}
+  GameOverPanel: {fileID: 1001130770}
   buttonOK: {fileID: 943221794}
   finishLevelTrigger: {fileID: 443594023}
   livesText: {fileID: 697021835}
@@ -649,6 +650,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2796976016827211457, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344818520814801100, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6420952615171258333, guid: 3d08874aa9d5d414588681e5174ba854,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -667,6 +678,11 @@ PrefabInstance:
     - target: {fileID: 6420952616143502027, guid: 3d08874aa9d5d414588681e5174ba854,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698281450928562850, guid: 3d08874aa9d5d414588681e5174ba854,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -752,6 +768,12 @@ MonoBehaviour:
 --- !u!1 &943221800 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6420952614681717075, guid: 3d08874aa9d5d414588681e5174ba854,
+    type: 3}
+  m_PrefabInstance: {fileID: 943221792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001130770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6144627398076375409, guid: 3d08874aa9d5d414588681e5174ba854,
     type: 3}
   m_PrefabInstance: {fileID: 943221792}
   m_PrefabAsset: {fileID: 0}

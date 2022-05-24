@@ -7,6 +7,7 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject welcomePanel;
+    [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private Button buttonOK;
     [SerializeField] private FinishLevel finishLevelTrigger;
     [SerializeField] private TextMeshProUGUI livesText;
@@ -39,6 +40,11 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         livesText.text = $"{LivesCount}";
+
+        if (LivesCount < 0)
+        {
+            EnablePanel(GameOverPanel);
+        }
     }
 
     private void OnEnable()

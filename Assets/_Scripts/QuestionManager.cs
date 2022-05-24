@@ -113,7 +113,6 @@ public class QuestionManager : MonoBehaviour
 
             Debug.Log("Correct");
 
-            settingsStorageSO.ClearStorage();
             _curentQuestionIndex++;
         }
         else
@@ -122,6 +121,8 @@ public class QuestionManager : MonoBehaviour
             
             Debug.Log("Wrong");
         }
+
+        settingsStorageSO.ClearStorage();
     }
 
     public void Load()

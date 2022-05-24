@@ -10,8 +10,21 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button buttonNewGame;
     [SerializeField] private Button buttonQuit;
 
+    private void Start()
+    {
+        if (LevelManager.LivesCount < 0)
+        {
+            buttonLoad.interactable = false;
+        }
+        else
+        {
+            buttonLoad.interactable = true;
+        }
+    }
+
     private void OnEnable()
     {
+        
         buttonLoad.onClick.AddListener(LoadGame);
         buttonNewGame.onClick.AddListener(NewGame);
         buttonQuit.onClick.AddListener(QuitGame);
