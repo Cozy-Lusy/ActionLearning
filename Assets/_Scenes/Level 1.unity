@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 1
-  firstQuestionPanel: {fileID: 943221800}
+  questionPanel: {fileID: 943221800}
   queryText: {fileID: 943221799}
   buttonText:
   - {fileID: 1868638499}

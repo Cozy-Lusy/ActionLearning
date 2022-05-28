@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SettingsStorage">
+    <Position X="9.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAABAAAAACAACAAAAgAA=</HashCode>
+      <FileName>Assets\_Scripts\SettingsStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadManager">
+    <Position X="14.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAICAA=</HashCode>
+      <FileName>Assets\_Scripts\Save\LoadManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveData">
+    <Position X="10.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\Save\SaveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveManager">
+    <Position X="9" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\Save\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinishLevel">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\_Scripts\FinishLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Constants">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIAAAAAAAQAAAAQAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\GameConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputManager">
+    <Position X="14.5" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="1.191" />
+        <Point X="10.5" Y="1.625" />
+        <Point X="14.26" Y="1.625" />
+        <Point X="14.26" Y="5.688" />
+        <Point X="14.5" Y="5.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAACAAAAAAAABAAAAAAAAEAAAAQAAAAAgAEAA=</HashCode>
+      <FileName>Assets\_Scripts\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="1.191" />
+        <Point X="10.5" Y="1.625" />
+        <Point X="7.875" Y="1.625" />
+        <Point X="7.875" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="finishLevelTrigger" Type="FinishLevel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.167" Y="1.721" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAEIAAACAAAAAAAAKEAAQAAAEAEABIAAIAAAEAGAA=</HashCode>
+      <FileName>Assets\_Scripts\LevelManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="finishLevelTrigger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAABACAAAAAAAAAAAIAABAAAAAAIAAAAAAAICAE=</HashCode>
+      <FileName>Assets\_Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQgAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAIAAAgACAA=</HashCode>
+      <FileName>Assets\_Scripts\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="1.191" />
+        <Point X="10.5" Y="1.625" />
+        <Point X="5.231" Y="1.625" />
+        <Point X="5.231" Y="6.188" />
+        <Point X="5.5" Y="6.188" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAqAAABAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuestionData">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAQAEAAAAhAAAAIABAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\QuestionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuestionManager">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <AssociationLine Name="settingsStorageSO" Type="SettingsStorage" ManuallyRouted="true">
+      <Path>
+        <Point X="12.5" Y="5.223" />
+        <Point X="11.879" Y="5.223" />
+        <Point X="11.879" Y="8.977" />
+        <Point X="11" Y="8.977" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAhABAOCAAAAABEAAAAAAQAEBAABBIgCCgAAAACAA=</HashCode>
+      <FileName>Assets\_Scripts\QuestionManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="settingsStorageSO" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_questionsForLevel" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="12.75" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ScriptableObject" Collapsed="true">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

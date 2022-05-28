@@ -7,7 +7,7 @@ public class QuestionManager : MonoBehaviour
 {
     [SerializeField] private int levelIndex = -1;
 
-    [SerializeField] private GameObject firstQuestionPanel;
+    [SerializeField] private GameObject questionPanel;
     [SerializeField] private TextMeshProUGUI queryText;
     [SerializeField] private List<TextMeshProUGUI> buttonText;
     [SerializeField] private SettingsStorage settingsStorageSO;
@@ -65,7 +65,7 @@ public class QuestionManager : MonoBehaviour
 
     private void EventFirstQuestion()
     {
-        LevelManager.EnablePanel(firstQuestionPanel);
+        LevelManager.EnablePanel(questionPanel);
     }
 
     private QuestionData GetQuestion(int questionIndex)
@@ -108,7 +108,7 @@ public class QuestionManager : MonoBehaviour
 
         if (correctAnswer == answer)
         {
-            LevelManager.DisablePanel(firstQuestionPanel);
+            LevelManager.DisablePanel(questionPanel);
 
             Debug.Log("Correct");
 
