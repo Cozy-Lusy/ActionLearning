@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
@@ -53,6 +52,7 @@ public class LevelManager : MonoBehaviour
         {
             finishLevelTrigger.OnLevelEnded += CompleteLevel;
         }
+
         if (buttonOK != null)
         {
             buttonOK.onClick.AddListener(() => DisablePanel(welcomePanel));
@@ -65,6 +65,7 @@ public class LevelManager : MonoBehaviour
         {
             finishLevelTrigger.OnLevelEnded -= CompleteLevel;
         }
+
         if (buttonOK != null)
         {
             buttonOK.onClick.RemoveAllListeners();
